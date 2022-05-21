@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/btn_purple_a400.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/btn_rounded_white.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/button_background.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/circlebackground_bt.xml" value="0.203" />
+        <entry key="app/src/main/res/drawable/circlebackground_btn.xml" value="0.203" />
+        <entry key="app/src/main/res/drawable/edit_text_round_bg_outline.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_booking.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_get_directions.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_main_page.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_register_user.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/activity_sign_up_login.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/background.xml" value="0.203" />
+        <entry key="app/src/main/res/layout/popup.xml" value="0.22" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK" />
+</project>

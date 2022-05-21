@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_focused="true">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <stroke android:width="1dp" android:color="@color/browser_actions_bg_grey" />
+                    <corners android:radius="@dimen/cardview_default_radius" />
+                    <padding android:bottom="5dp" android:left="8dp" android:right="8dp" android:top="5dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <item android:state_enabled="false">
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <stroke android:width="1dp" android:color="@color/browser_actions_bg_grey" />
+                    <solid android:color="@color/design_default_color_primary" />
+                    <corners android:radius="@dimen/cardview_default_radius" />
+                    <padding android:bottom="5dp" android:left="8dp" android:right="8dp" android:top="5dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+
+    <item>
+        <layer-list>
+            <item>
+                <shape android:shape="rectangle">
+                    <stroke android:width="1dp" android:color="@color/design_default_color_primary" />
+                    <corners android:radius="@dimen/cardview_default_radius" />
+                    <padding android:bottom="5dp" android:left="8dp" android:right="8dp" android:top="5dp" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</selector>

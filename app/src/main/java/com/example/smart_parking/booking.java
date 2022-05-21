@@ -13,6 +13,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class booking extends AppCompatActivity {
     Button bookingButton;
@@ -21,9 +22,8 @@ public class booking extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
-        bookingButton = findViewById(R.id.bookButton);
+        bookingButton = findViewById(R.id.BookSlotBtn);
         bookingButton.setOnClickListener(new View.OnClickListener() {
-
             @Override
             public void onClick(View v) {
                 NotificationChannel channel;
@@ -42,19 +42,9 @@ public class booking extends AppCompatActivity {
         });
     }
 
+    public void bookSlot(View view) {
+        Toast booking = Toast.makeText(booking.this, "Booked!", Toast.LENGTH_SHORT);
+        booking.show();
 
-    public void directMe(View view){
-        NotificationChannel channel;
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            channel = new NotificationChannel(CHANNEL_ID,"Notification 1", NotificationManager.IMPORTANCE_HIGH);
-            Builder builder = new Builder(getApplicationContext())
-                    .setContentTitle("Smart Parking")
-                    .setContentText("You have booked parking slot1")
-                    .setSmallIcon(R.drawable.book_notification)
-                    .setChannelId(CHANNEL_ID);
-            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-            notificationManager.createNotificationChannel(channel);
-            notificationManager.notify(1, builder.build());
-        }
     }
 }

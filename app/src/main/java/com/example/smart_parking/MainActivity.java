@@ -41,28 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
             }
         });
-        
-//        bookingButton.setOnClickListener(new View.OnClickListener(){
-//            @RequiresApi(api = Build.VERSION_CODES.O)
-//            @Override
-//            public void onClick(View view){
-//                NotificationChannel channel = new NotificationChannel(CHANNEL_ID,"Notification 1", NotificationManager.IMPORTANCE_HIGH);
-//                Notification.Builder builder = new Notification.Builder(getApplicationContext())
-//                        .setContentTitle("Smart Parking")
-//                        .setContentText("You have booked parking slot1")
-//                        .setSmallIcon(R.drawable.book_notification)
-//                        .setChannelId(CHANNEL_ID);
-//                NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-//                notificationManager.createNotificationChannel(channel);
-//                notificationManager.notify(1, builder.build());
-//
-//                Notification noti = new Notification.Builder(getApplicationContext())
-//                        .setContentTitle("Smart Parking")
-//                        .setContentText("You have booked parking slot1")
-//                        .setSmallIcon(R.drawable.book_notification)
-//                        .build();
-//            }
-//        });
+
     }
 
     public void getStarted(View view){
@@ -87,6 +66,11 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    public void googleMapsLaunch(View view){
+        Toast gmaps = Toast.makeText(MainActivity.this, "searching location... ", Toast.LENGTH_SHORT);
+        gmaps.show();
 
+        finish();
+    }
 
 }

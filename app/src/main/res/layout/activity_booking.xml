@@ -4,25 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".booking">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/slotStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="PARKING SLOT STATUS: FREE"
+        android:text="STATUS: "
+        android:textColor="@color/purple_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.43"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599" />
+        app:layout_constraintVertical_bias="0.553" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PARKING SLOT 1"
+        android:textColor="@color/purple_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -33,10 +36,38 @@
         android:id="@+id/BookSlotBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Book this slot"
+        android:layout_marginBottom="118dp"
         android:onClick="bookSlot"
+        android:text="Book this slot"
+        app:icon="@drawable/ic_baseline_book_online_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="FREE"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+
+        app:layout_constraintBaseline_toBaselineOf="@+id/slotStatus"
+        app:layout_constraintLeft_toRightOf="@+id/slotStatus"
+        app:layout_constraintStart_toEndOf="@+id/slotStatus" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="168dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="183dp"
+        android:layout_marginBottom="228dp"
+        app:layout_constraintBottom_toTopOf="@+id/BookSlotBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/splash" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -10,14 +10,15 @@
         <entry key="app/src/main/res/drawable/circlebackground_bt.xml" value="0.203" />
         <entry key="app/src/main/res/drawable/circlebackground_btn.xml" value="0.203" />
         <entry key="app/src/main/res/drawable/edit_text_round_bg_outline.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_booking.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_get_directions.xml" value="0.1953125" />
+        <entry key="app/src/main/res/layout/activity_booking.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_get_directions.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main_page.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_register_user.xml" value="0.1953125" />
         <entry key="app/src/main/res/layout/activity_sign_up_login.xml" value="0.22" />
         <entry key="app/src/main/res/layout/background.xml" value="0.203" />
         <entry key="app/src/main/res/layout/popup.xml" value="0.22" />
+        <entry key="app/src/main/res/menu/main_menu.xml" value="0.1953125" />
       </map>
     </option>
   </component>

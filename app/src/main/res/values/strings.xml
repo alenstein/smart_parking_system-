@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">smart_parking</string>
+    <string name="parking_slot">parking slot</string>
+    <string name="parking_slot_status_free">PARKING SLOT STATUS: FREE</string>
+    <string name="parking_slot_1">PARKING SLOT 1</string>
+    <string name="direct_me">Direct Me</string>
 </resources>

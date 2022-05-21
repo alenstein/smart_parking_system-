@@ -15,12 +15,14 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    Button popUpParkingButton;
+    Button getDirectionsBtn;
     Button bookingButton;
-    private Button getDirectionsBtn;
+
+    private ImageButton slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9;
     Dialog popDialog;
     private static final String CHANNEL_ID = "book_id";
 
@@ -28,12 +30,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        popUpParkingButton = findViewById(R.id.popUpParkingButton);
         bookingButton = findViewById(R.id.bookButton);
+
+        slot1 = findViewById(R.id.imageButton);
+        slot2 = findViewById(R.id.imageButton2);
+        slot3 = findViewById(R.id.imageButton3);
+        slot4 = findViewById(R.id.imageButton5);
+        slot5 = findViewById(R.id.imageButton4);
+        slot6 = findViewById(R.id.imageButton6);
+        slot7 = findViewById(R.id.imageButton7);
+        slot8 = findViewById(R.id.imageButton8);
+        slot9 = findViewById(R.id.imageButton9);
+
         popDialog = new Dialog(this);
         getDirectionsBtn = findViewById(R.id.directButton);
 
-        popUpParkingButton.setOnClickListener(new View.OnClickListener() {
+        slot1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 popDialog.setContentView(R.layout.popup);
@@ -41,6 +53,72 @@ public class MainActivity extends AppCompatActivity {
                 popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
             }
         });
+        slot2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popDialog.setContentView(R.layout.popup);
+                popDialog.show();
+                popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+            }
+        });
+        slot3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popDialog.setContentView(R.layout.popup);
+                popDialog.show();
+                popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+            }
+        });
+        slot4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popDialog.setContentView(R.layout.popup);
+                popDialog.show();
+                popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+            }
+        });
+        slot5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popDialog.setContentView(R.layout.popup);
+                popDialog.show();
+                popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+            }
+        });
+        slot6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popDialog.setContentView(R.layout.popup);
+                popDialog.show();
+                popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+            }
+        });
+        slot7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popDialog.setContentView(R.layout.popup);
+                popDialog.show();
+                popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+            }
+        });
+        slot8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popDialog.setContentView(R.layout.popup);
+                popDialog.show();
+                popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+            }
+        });
+        slot9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popDialog.setContentView(R.layout.popup);
+                popDialog.show();
+                popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+            }
+        });
+
+
 
     }
 
@@ -69,7 +147,6 @@ public class MainActivity extends AppCompatActivity {
     public void googleMapsLaunch(View view){
         Toast gmaps = Toast.makeText(MainActivity.this, "searching location... ", Toast.LENGTH_SHORT);
         gmaps.show();
-
         finish();
     }
 

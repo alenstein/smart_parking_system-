@@ -4,4 +4,5 @@
     <string name="parking_slot_status_free">PARKING SLOT STATUS: FREE</string>
     <string name="parking_slot_1">PARKING SLOT 1</string>
     <string name="direct_me">Direct Me</string>
+    <string name="take_me_there">Take Me There</string>
 </resources>

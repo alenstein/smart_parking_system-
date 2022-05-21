@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bookingButton = findViewById(R.id.bookButton);
+        bookingButton = findViewById(R.id.BookSlotBtn);
 
         slot1 = findViewById(R.id.imageButton);
         slot2 = findViewById(R.id.imageButton2);

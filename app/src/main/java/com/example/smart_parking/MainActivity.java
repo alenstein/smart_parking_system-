@@ -134,20 +134,18 @@ public class MainActivity extends AppCompatActivity {
         directMe.show();
         startActivity(new Intent(MainActivity.this,
                 GetDirections.class) );
-        finish();
     }
+
     public void bookSlot(View view){
         Toast booking = Toast.makeText(MainActivity.this, "preparing to book slot", Toast.LENGTH_SHORT);
         booking.show();
         startActivity(new Intent(MainActivity.this,
                 booking.class) );
-        //finish();
     }
 
     public void googleMapsLaunch(View view){
         Toast gmaps = Toast.makeText(MainActivity.this, "searching location... ", Toast.LENGTH_SHORT);
         gmaps.show();
-        //finish();
-    }
+   }
 
 }

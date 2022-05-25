@@ -12,6 +12,7 @@
         <entry key="app/src/main/res/drawable/circlebackground_btn.xml" value="0.203" />
         <entry key="app/src/main/res/drawable/edit_text_round_bg_outline.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/parking_logo _background.xml" value="0.101" />
+        <entry key="app/src/main/res/drawable/parking_logo_background.xml" value="0.203" />
         <entry key="app/src/main/res/layout/activity_booking.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_get_directions.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
@@ -21,6 +22,8 @@
         <entry key="app/src/main/res/layout/background.xml" value="0.203" />
         <entry key="app/src/main/res/layout/popup.xml" value="0.22" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.1953125" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/parking_logo.xml" value="0.101" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/parking_logo_round.xml" value="0.101" />
       </map>
     </option>
   </component>

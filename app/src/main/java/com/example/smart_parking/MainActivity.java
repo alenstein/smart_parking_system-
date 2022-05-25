@@ -143,9 +143,12 @@ public class MainActivity extends AppCompatActivity {
                 booking.class) );
     }
 
-    public void googleMapsLaunch(View view){
+    public void googleMapsLaunch(View view) {
         Toast gmaps = Toast.makeText(MainActivity.this, "searching location... ", Toast.LENGTH_SHORT);
         gmaps.show();
-   }
-
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("google.navigation:q=22.659239,88.435534&mode=1"));
+        intent.setPackage("com.google.android.apps.maps");
+        if (intent.resolveActivity(getPackageManager()) != null) startActivity(intent);
+    }
 }

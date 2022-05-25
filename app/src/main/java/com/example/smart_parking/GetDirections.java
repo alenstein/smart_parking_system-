@@ -2,6 +2,8 @@ package com.example.smart_parking;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -34,6 +36,7 @@ public class GetDirections extends AppCompatActivity {
                     NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                     notificationManager.createNotificationChannel(channel);
                     notificationManager.notify(2, builder.build());
+                    directMe(v);
                 }
             }
         });
@@ -43,6 +46,10 @@ public class GetDirections extends AppCompatActivity {
     public void directMe(View view) {
         Toast booking = Toast.makeText(GetDirections.this, "Directing......", Toast.LENGTH_SHORT);
         booking.show();
-    }
+        Intent intent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("google.navigation:q=22.659239,88.435534&mode=1"));
+        intent.setPackage("com.google.android.apps.maps");
+        if(intent.resolveActivity(getPackageManager()) != null) startActivity(intent);
+     }
 
 }

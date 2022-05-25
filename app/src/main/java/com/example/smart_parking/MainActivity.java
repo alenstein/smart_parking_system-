@@ -141,13 +141,13 @@ public class MainActivity extends AppCompatActivity {
         booking.show();
         startActivity(new Intent(MainActivity.this,
                 booking.class) );
-        finish();
+        //finish();
     }
 
     public void googleMapsLaunch(View view){
         Toast gmaps = Toast.makeText(MainActivity.this, "searching location... ", Toast.LENGTH_SHORT);
         gmaps.show();
-        finish();
+        //finish();
     }
 
 }

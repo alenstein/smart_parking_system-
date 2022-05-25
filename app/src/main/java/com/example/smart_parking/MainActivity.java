@@ -122,11 +122,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void getStarted(View view){
-        Toast parking_started = Toast.makeText(MainActivity.this, "Parking Started", Toast.LENGTH_SHORT);
+    public void getStarted(){
+        MainActivity.super.getParent();
+        Toast parking_started = Toast.makeText(MainActivity.this, "Parking slots status ", Toast.LENGTH_SHORT);
         parking_started.show();
-        startActivity(new Intent(MainActivity.this,
-                SignUpLogin.class) );
+        //startActivity(new Intent(MainActivity.this, SignUpLogin.class) );
         finish();
     }
     public void takeMeThere(View view){
@@ -151,4 +151,5 @@ public class MainActivity extends AppCompatActivity {
         intent.setPackage("com.google.android.apps.maps");
         if (intent.resolveActivity(getPackageManager()) != null) startActivity(intent);
     }
+
 }

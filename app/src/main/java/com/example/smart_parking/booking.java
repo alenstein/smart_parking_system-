@@ -37,6 +37,9 @@ public class booking extends AppCompatActivity {
                     NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
                     notificationManager.createNotificationChannel(channel);
                     notificationManager.notify(1, builder.build());
+
+
+
                 }
             }
         });
@@ -45,6 +48,8 @@ public class booking extends AppCompatActivity {
     public void bookSlot(View view) {
         Toast booking = Toast.makeText(booking.this, "Booked!", Toast.LENGTH_SHORT);
         booking.show();
+        Toast timeLapse = Toast.makeText(booking.this, "You have 15 minutes before your booking is cancelled!", Toast.LENGTH_SHORT);
+        timeLapse.show();
 
     }
 }

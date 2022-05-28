@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class GetDirections extends AppCompatActivity {
     Timer parkingTimer;
     int count = 0;
     boolean stopped = false;
+    TextView parkingSLotStatus;
 
 
 
@@ -32,6 +34,7 @@ public class GetDirections extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_directions);
         getDirectionsBtn = findViewById(R.id.directButton);
+        parkingSLotStatus = findViewById(R.id.status);
 
         getDirectionsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +43,7 @@ public class GetDirections extends AppCompatActivity {
                 context = "directing on google maps....";
                 notifyPush(v, Title, context);
                 directMe(v);
+                parkingSLotStatus.setText("OCCUPIED");
                 calculateParkingTime(v);
                 if(stopped){
                     MainActivity reload = new MainActivity();
@@ -67,7 +71,7 @@ public class GetDirections extends AppCompatActivity {
              public void run() {
                 Log.d("testing", count + "s running!");
                 count++;
-                if(count == 5){
+                if(count == 15){
                     Title = "Smart Parking";
                     context = "Time for reaching parking slot 1 has elapsed, look for another free parking slot!";
                     notifyPush(view, Title, context);
@@ -78,7 +82,7 @@ public class GetDirections extends AppCompatActivity {
                 }
              }
 
-            }, 0, 1000);
+            }, 0, 15000);
 
      }
 

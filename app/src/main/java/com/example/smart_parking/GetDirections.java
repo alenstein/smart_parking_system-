@@ -46,6 +46,7 @@ public class GetDirections extends AppCompatActivity {
                 parkingSLotStatus.setText("OCCUPIED");
                 calculateParkingTime(v);
                 if(stopped){
+                    parkingSLotStatus.setText("FREE");
                     MainActivity reload = new MainActivity();
                     reload.getStarted();
                 }

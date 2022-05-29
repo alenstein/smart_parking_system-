@@ -60,7 +60,7 @@ public class GetDirections extends AppCompatActivity {
         Toast booking = Toast.makeText(GetDirections.this, "Directing......", Toast.LENGTH_SHORT);
         booking.show();
         Intent intent = new Intent(Intent.ACTION_VIEW,
-                Uri.parse("google.navigation:q=22.659239,88.435534&mode=1"));
+                Uri.parse("google.navigation:q=-20.1646734,28.6409953&mode=1"));
         intent.setPackage("com.google.android.apps.maps");
         if(intent.resolveActivity(getPackageManager()) != null) startActivity(intent);
      }

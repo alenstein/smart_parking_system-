@@ -15,4 +15,10 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowNoTitle">true</item>
     </style>
+    <style name="splashScreenTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:windowBackground">
+            @drawable/screen_splash
+        </item>
+        <item name="android:statusBarColor">@color/white</item>
+    </style>
 </resources>

@@ -7,7 +7,7 @@
         android:label="@string/app_name"
         android:roundIcon="@drawable/parking_logo_background"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Smart_parking">
+        android:theme="@style/splashScreenTheme">
         <activity
             android:name=".booking"
             android:exported="false" />

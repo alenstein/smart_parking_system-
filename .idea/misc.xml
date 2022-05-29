@@ -13,6 +13,8 @@
         <entry key="app/src/main/res/drawable/edit_text_round_bg_outline.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/parking_logo _background.xml" value="0.101" />
         <entry key="app/src/main/res/drawable/parking_logo_background.xml" value="0.203" />
+        <entry key="app/src/main/res/drawable/splash_image.xml" value="0.203" />
+        <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_booking.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_get_directions.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />

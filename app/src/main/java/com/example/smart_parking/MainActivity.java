@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         slot8 = findViewById(R.id.imageButton8);
         slot9 = findViewById(R.id.imageButton9);
 
-        popDialog = new Dialog(this);
+       popDialog = new Dialog(this); popDialog = new Dialog(this);
         getDirectionsBtn = findViewById(R.id.directButton);
 
         slot1.setOnClickListener(new View.OnClickListener() {

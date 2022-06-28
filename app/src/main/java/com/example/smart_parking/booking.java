@@ -4,10 +4,13 @@ import static android.app.Notification.*;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -18,29 +21,21 @@ import android.widget.Toast;
 public class booking extends AppCompatActivity {
     Button bookingButton;
     String CHANNEL_ID = "channel 1";
+    Dialog popDialog;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
         bookingButton = findViewById(R.id.BookSlotBtn);
+        popDialog = new Dialog(this);
+
         bookingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NotificationChannel channel;
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                    channel = new NotificationChannel(CHANNEL_ID, "Notification 1", NotificationManager.IMPORTANCE_HIGH);
-                    Builder builder = new Builder(getApplicationContext())
-                            .setContentTitle("Smart Parking")
-                            .setContentText("You have booked parking slot1")
-                            .setSmallIcon(R.drawable.book_notification)
-                            .setChannelId(CHANNEL_ID);
-                    NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                    notificationManager.createNotificationChannel(channel);
-                    notificationManager.notify(1, builder.build());
+                popDialog.setContentView(R.layout.book_popup);
+                popDialog.show();
+                popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
 
-
-
-                }
             }
         });
     }
@@ -50,6 +45,21 @@ public class booking extends AppCompatActivity {
         booking.show();
         Toast timeLapse = Toast.makeText(booking.this, "You have 15 minutes before your booking is cancelled!", Toast.LENGTH_SHORT);
         timeLapse.show();
-
     }
+
+    public void bookNow(View view){
+        NotificationChannel channel;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            channel = new NotificationChannel(CHANNEL_ID, "Notification 1", NotificationManager.IMPORTANCE_HIGH);
+            Builder builder = new Builder(getApplicationContext())
+                    .setContentTitle("Smart Parking")
+                    .setContentText("You have booked parking slot1")
+                    .setSmallIcon(R.drawable.book_notification)
+                    .setChannelId(CHANNEL_ID);
+            NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+            notificationManager.createNotificationChannel(channel);
+            notificationManager.notify(1, builder.build());
+        }
+    }
+
 }

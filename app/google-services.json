@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "928948146312",
-    "project_id": "smart-parking-5760b",
-    "storage_bucket": "smart-parking-5760b.appspot.com"
+    "project_number": "541566077009",
+    "project_id": "smart-parking-f3b28",
+    "storage_bucket": "smart-parking-f3b28.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:928948146312:android:6d28729248b47c93e70f3d",
+        "mobilesdk_app_id": "1:541566077009:android:597a77a1e2668847389070",
         "android_client_info": {
           "package_name": "com.example.smart_parking"
         }
       },
       "oauth_client": [
         {
-          "client_id": "928948146312-6247c925isdsa6n291vphe5h98p9q3ef.apps.googleusercontent.com",
+          "client_id": "541566077009-c4iet3pu8edjndl5bok6v881k5e8h52h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCzV1Tez9qmuIupb5w_ertD37yfVDjXIhc"
+          "current_key": "AIzaSyAUVnWGICI2y443qFEZ_o3JddpzZeI3ZZY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "928948146312-6247c925isdsa6n291vphe5h98p9q3ef.apps.googleusercontent.com",
+              "client_id": "541566077009-c4iet3pu8edjndl5bok6v881k5e8h52h.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

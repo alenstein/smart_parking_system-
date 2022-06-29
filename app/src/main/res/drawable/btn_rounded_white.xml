@@ -14,7 +14,12 @@
             </item>
         </layer-list>
 
-    </item>
+    </item>        app:icon="@drawable/ic_baseline_book_online_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:lay
     <item android:state_focused="true">
 
         <layer-list>

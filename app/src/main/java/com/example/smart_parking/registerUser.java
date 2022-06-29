@@ -98,7 +98,7 @@ public class registerUser extends AppCompatActivity  {
                         .addOnCompleteListener(task -> {
 
                             if (task.isSuccessful()) {
-
+                            //add extra fields to user
                                 User user = new User(
                                         plateNumber,
                                         email1,
@@ -110,7 +110,7 @@ public class registerUser extends AppCompatActivity  {
                                         .setValue(user).addOnCompleteListener(task1 -> {
                                             if (task1.isSuccessful()) {
                                                 Toast.makeText(registerUser.this, "Account Created Successfully", Toast.LENGTH_LONG).show();
-                                                registerUser.this.startActivity(new Intent(registerUser.this, MainActivity.class));
+                                                registerUser.this.startActivity(new Intent(registerUser.this, SignUpLogin.class));
                                             } else {
                                                 //display a failure message
                                                 Toast.makeText(registerUser.this, "Registration Failed, try again!", Toast.LENGTH_SHORT).show();

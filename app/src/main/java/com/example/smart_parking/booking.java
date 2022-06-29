@@ -23,52 +23,50 @@ import android.widget.Toast;
 public class booking extends AppCompatActivity {
     Button bookingButton;
     String CHANNEL_ID = "channel 2";
-    Dialog popDialog;
-    EditText bookingHours;
+
+    EditText bookTheseHours;
     TextView parkingSlotStatusUpdate;
-    String bookedHours;
+    String bookedHours, title, context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
         bookingButton = findViewById(R.id.BookSlotBtn);
-        popDialog = new Dialog(this);
-        bookingHours = findViewById(R.id.bookingHoursInput);
+
+        bookTheseHours = findViewById(R.id.bookingHoursInput);
         parkingSlotStatusUpdate = findViewById(R.id.textView2);
 
-        bookingButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                popDialog.setContentView(R.layout.book_popup);
-                popDialog.show();
-                popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-                            }
-        });
     }
 
 
 
-    public void bookNow(View view){
+    public void bookSlot(View view){
+        bookedHours = bookTheseHours.getText().toString();
+        Toast booking = Toast.makeText(booking.this, "preparing to book slot", Toast.LENGTH_SHORT);
+        booking.show();
 
+        title = "Smart Parking";
+        context = "Booked parking slot1 for " + bookedHours + " hours";
+        notifyPush(view, title, context);
+
+        parkingSlotStatusUpdate.setText("BOOKED");
+
+        //startActivity(new Intent(MainActivity.this, SignUpLogin.class) );
+    }
+
+    public void notifyPush(View view, String nTitle, String nContext) {
         NotificationChannel channel;
-        if (bookingHours != null) bookedHours = bookingHours.getText().toString();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            channel = new NotificationChannel(CHANNEL_ID, "Notification 1", NotificationManager.IMPORTANCE_HIGH);
-            Builder builder = new Builder(getApplicationContext())
-                    .setContentTitle("Smart Parking")
-                    .setContentText("You have booked parking slot1 for " + bookedHours + " Hours.")
+            channel = new NotificationChannel(CHANNEL_ID, "Notification 2", NotificationManager.IMPORTANCE_HIGH);
+            Notification.Builder builder = new    Notification.Builder(getApplicationContext())
+                    .setContentTitle(nTitle)
+                    .setContentText(nContext)
                     .setSmallIcon(R.drawable.book_notification)
                     .setChannelId(CHANNEL_ID);
             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
             notificationManager.createNotificationChannel(channel);
-            notificationManager.notify(1, builder.build());
-            Toast booking = Toast.makeText(booking.this, "Booked!", Toast.LENGTH_SHORT);
-            booking.show();
-            parkingSlotStatusUpdate.setText("BOOKED");
-            popDialog.dismiss();
-
+            notificationManager.notify(2, builder.build());
         }
     }
-
 }

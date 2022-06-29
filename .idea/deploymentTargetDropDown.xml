@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="deploymentTargetDropDown">
-    <runningDeviceTargetSelectedWithDropDown>
+   <runningDeviceTargetSelectedWithDropDown>
       <Target>
         <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
-          <Key>
+          <Key> 
             <type value="SERIAL_NUMBER" />
             <value value="06107370AT005500" />
           </Key>
@@ -13,5 +13,6 @@
       </Target>
     </runningDeviceTargetSelectedWithDropDown>
     <timeTargetWasSelectedWithDropDown value="2022-06-29T13:39:16.274813Z" />
+
   </component>
 </project>

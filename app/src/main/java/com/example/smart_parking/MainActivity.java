@@ -18,6 +18,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+
+
 public class MainActivity extends AppCompatActivity {
     Button getDirectionsBtn;
     Button bookingButton;
@@ -26,11 +28,15 @@ public class MainActivity extends AppCompatActivity {
     Dialog popDialog;
     private static final String CHANNEL_ID = "book_id";
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setTheme(R.style.Theme_Smart_parking);
         setContentView(R.layout.activity_main);
+
+
         bookingButton = findViewById(R.id.BookSlotBtn);
 
         slot1 = findViewById(R.id.imageButton);
@@ -141,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
         Toast booking = Toast.makeText(MainActivity.this, "preparing to book slot", Toast.LENGTH_SHORT);
         booking.show();
         startActivity(new Intent(MainActivity.this,
-                booking.class) );
+                SignUpLogin.class) );
     }
 
     public void googleMapsLaunch(View view) {

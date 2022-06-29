@@ -9,6 +9,12 @@
         android:supportsRtl="true"
         android:theme="@style/splashScreenTheme">
         <activity
+            android:name=".ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Forgot_Password_Activity"
+            android:exported="false" />
+        <activity
             android:name=".booking"
             android:exported="false" />
         <activity
@@ -23,6 +29,7 @@
         <activity
             android:name=".SignUpLogin"
             android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

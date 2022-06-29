@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Jose/Documents/ELECTRONICS COURSES/design and project/3.2/smartparking-3.2/app/src/main/res/layout/activity_forgot_password.xml" value="0.2625" />
+        <entry key="..\:/Users/Jose/Documents/ELECTRONICS COURSES/design and project/3.2/smartparking-3.2/app/src/main/res/layout/activity_main.xml" value="0.2625" />
+        <entry key="..\:/Users/Jose/Documents/ELECTRONICS COURSES/design and project/3.2/smartparking-3.2/app/src/main/res/layout/activity_main_page.xml" value="0.2625" />
+        <entry key="..\:/Users/Jose/Documents/ELECTRONICS COURSES/design and project/3.2/smartparking-3.2/app/src/main/res/layout/activity_register_user.xml" value="0.2625" />
+        <entry key="..\:/Users/Jose/Documents/ELECTRONICS COURSES/design and project/3.2/smartparking-3.2/app/src/main/res/layout/activity_reset_password.xml" value="0.2625" />
+        <entry key="..\:/Users/Jose/Documents/ELECTRONICS COURSES/design and project/3.2/smartparking-3.2/app/src/main/res/layout/activity_sign_up_login.xml" value="0.18432971014492755" />
         <entry key="app/src/main/res/drawable/background.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/background_splash.xml" value="0.134" />
         <entry key="app/src/main/res/drawable/btn_purple_a400.xml" value="0.1" />

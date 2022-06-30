@@ -91,7 +91,7 @@ public class GetDirections extends AppCompatActivity {
          NotificationChannel channel;
          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
              channel = new NotificationChannel(CHANNEL_ID, "Notification 2", NotificationManager.IMPORTANCE_HIGH);
-             Notification.Builder builder = new     Notification.Builder(getApplicationContext())
+             Notification.Builder builder = new    Notification.Builder(getApplicationContext())
                      .setContentTitle(nTitle)
                      .setContentText(nContext)
                      .setSmallIcon(R.drawable.book_notification)

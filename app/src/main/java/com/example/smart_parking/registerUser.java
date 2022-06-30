@@ -1,5 +1,6 @@
 package com.example.smart_parking;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -7,18 +8,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import android.content.Intent;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.annotation.NonNull;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class registerUser extends AppCompatActivity  {
+public class  registerUser extends AppCompatActivity  {
 
     private EditText editTextPlateNumber, editTextEmail, editTextPassword, editTextPhone;
     private ProgressBar progressBar;
@@ -47,6 +43,7 @@ public class registerUser extends AppCompatActivity  {
         editTextEmail = findViewById(R.id.email1);
         editTextPassword = findViewById(R.id.password1);
         editTextPhone = findViewById(R.id.phoneNumber);
+
 
         //progressBar.setVisibility(View.GONE);
 

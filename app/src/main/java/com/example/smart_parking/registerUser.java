@@ -65,7 +65,7 @@ public class registerUser extends AppCompatActivity  {
 
 
         if (email1.isEmpty()||password.isEmpty()||phone.isEmpty()) {
-            Toast.makeText(registerUser.this,"Please fill all your details!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(registerUser.this,"Please fill in all your details!",Toast.LENGTH_SHORT).show();
             editTextEmail.requestFocus();
             return;
         }
@@ -116,7 +116,7 @@ public class registerUser extends AppCompatActivity  {
                                                     registerUser.this.startActivity(new Intent(registerUser.this, MainActivity.class));
                                                 } else {
                                                     //display a failure message
-                                                    Toast.makeText(registerUser.this, "Registration Failed, try again!", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(registerUser.this, "Registration Failed, Please Try again!", Toast.LENGTH_SHORT).show();
                                                 }
                                             });
 

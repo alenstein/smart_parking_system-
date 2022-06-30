@@ -65,7 +65,7 @@ public class registerUser extends AppCompatActivity  {
 
 
         if (email1.isEmpty()||password.isEmpty()||phone.isEmpty()) {
-            Toast.makeText(registerUser.this,"Please fill all your details!",Toast.LENGTH_SHORT).show();
+            Toast.makeText(registerUser.this,"Please fill in all your details!",Toast.LENGTH_SHORT).show();
             editTextEmail.requestFocus();
             return;
         }
@@ -92,35 +92,40 @@ public class registerUser extends AppCompatActivity  {
 
 
         signUp.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                userAuth.createUserWithEmailAndPassword(email1, password)
-                        .addOnCompleteListener(task -> {
+                Task<com.google.firebase.auth.AuthResult> authResultTask = userAuth.createUserWithEmailAndPassword(email1, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
 
-                            if (task.isSuccessful()) {
+                                if (task.isSuccessful()) {
 
-                                User user = new User(
-                                        plateNumber,
-                                        email1,
-                                        phone
-                                );
+                                    User user = new User(
+                                            plateNumber,
+                                            email1,
+                                            phone
+                                    );
 
-                                FirebaseDatabase.getInstance().getReference("Users")
-                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                        .setValue(user).addOnCompleteListener(task1 -> {
-                                            if (task1.isSuccessful()) {
-                                                Toast.makeText(registerUser.this, "Account Created Successfully", Toast.LENGTH_LONG).show();
-                                                registerUser.this.startActivity(new Intent(registerUser.this, MainActivity.class));
-                                            } else {
-                                                //display a failure message
-                                                Toast.makeText(registerUser.this, "Registration Failed, try again!", Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
+                                    FirebaseDatabase.getInstance().getReference("Users")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(user).addOnCompleteListener(task1 -> {
+                                                if (task1.isSuccessful()) {
+                                                    Toast.makeText(registerUser.this, "Account Created Successfully", Toast.LENGTH_LONG).show();
+                                                    registerUser.this.startActivity(new Intent(registerUser.this, MainActivity.class));
+                                                } else {
+                                                    //display a failure message
+                                                    Toast.makeText(registerUser.this, "Registration Failed, Please Try again!", Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
 
-                            } else {
-                                Toast.makeText(registerUser.this, "try again", Toast.LENGTH_LONG).show();
+                                } else {
+                                    Toast.makeText(registerUser.this, "try again", Toast.LENGTH_LONG).show();
+                                }
                             }
                         });
+
             }
         });
 

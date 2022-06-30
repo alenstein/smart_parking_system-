@@ -1,7 +1,5 @@
 package com.example.smart_parking;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 
@@ -45,7 +44,14 @@ public class SignUpLogin extends AppCompatActivity {
         attachListeners();
 
     }
-
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = auth.getCurrentUser();
+        if(currentUser != null){
+            startActivity(new Intent(SignUpLogin.this, MainActivity.class) );
+        }
+    }
 
 
     private void initComponents() {
@@ -97,22 +103,21 @@ public class SignUpLogin extends AppCompatActivity {
     }
     private void loginUser(String email, String password) {
         //method user in logging in the user
-        final Task<AuthResult> authResultTask;
-        authResultTask = auth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             //start the MainActivity
-                            finish();
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
+
                         } else {
                             Toast.makeText(SignUpLogin.this, "Invalid Credentials!", Toast.LENGTH_SHORT).show();
 
                         }
                     }
                 });
-    };
+    }
 
 }
 

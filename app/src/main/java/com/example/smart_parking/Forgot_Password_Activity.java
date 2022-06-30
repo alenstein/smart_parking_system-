@@ -51,15 +51,15 @@ public class Forgot_Password_Activity extends AppCompatActivity {
         });
     }
 
-    private void resetPasswordMail(final String email) {
+    private void resetPasswordMail(final String resetEmail) {
 
-            FirebaseAuth.getInstance().sendPasswordResetEmail(email)
+            FirebaseAuth.getInstance().sendPasswordResetEmail(resetEmail)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()) {
-                                Toast.makeText(Forgot_Password_Activity.this, "Password Reset Email has been sent to ".concat(email), Toast.LENGTH_SHORT).show();
-                                Forgot_Password_Activity.this.startActivity(new Intent(Forgot_Password_Activity.this.getApplicationContext(), ResetPasswordActivity.class));
+                                Toast.makeText(Forgot_Password_Activity.this, "Password Reset Email has been sent to ".concat(resetEmail), Toast.LENGTH_SHORT).show();
+                                Forgot_Password_Activity.this.startActivity(new Intent(Forgot_Password_Activity.this.getApplicationContext(), SignUpLogin.class));
                                 Forgot_Password_Activity.this.finish();
                             } else {
                                 Toast.makeText(Forgot_Password_Activity.this, "Fail", Toast.LENGTH_SHORT).show();

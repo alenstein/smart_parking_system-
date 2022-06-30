@@ -92,35 +92,40 @@ public class registerUser extends AppCompatActivity  {
 
 
         signUp.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                userAuth.createUserWithEmailAndPassword(email1, password)
-                        .addOnCompleteListener(task -> {
+                Task<com.google.firebase.auth.AuthResult> authResultTask = userAuth.createUserWithEmailAndPassword(email1, password)
+                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
 
-                            if (task.isSuccessful()) {
-                            //add extra fields to user
-                                User user = new User(
-                                        plateNumber,
-                                        email1,
-                                        phone
-                                );
+                                if (task.isSuccessful()) {
 
-                                FirebaseDatabase.getInstance().getReference("Users")
-                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                        .setValue(user).addOnCompleteListener(task1 -> {
-                                            if (task1.isSuccessful()) {
-                                                Toast.makeText(registerUser.this, "Account Created Successfully", Toast.LENGTH_LONG).show();
-                                                registerUser.this.startActivity(new Intent(registerUser.this, SignUpLogin.class));
-                                            } else {
-                                                //display a failure message
-                                                Toast.makeText(registerUser.this, "Registration Failed, try again!", Toast.LENGTH_SHORT).show();
-                                            }
-                                        });
+                                    User user = new User(
+                                            plateNumber,
+                                            email1,
+                                            phone
+                                    );
 
-                            } else {
-                                Toast.makeText(registerUser.this, "try again", Toast.LENGTH_LONG).show();
+                                    FirebaseDatabase.getInstance().getReference("Users")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(user).addOnCompleteListener(task1 -> {
+                                                if (task1.isSuccessful()) {
+                                                    Toast.makeText(registerUser.this, "Account Created Successfully", Toast.LENGTH_LONG).show();
+                                                    registerUser.this.startActivity(new Intent(registerUser.this, MainActivity.class));
+                                                } else {
+                                                    //display a failure message
+                                                    Toast.makeText(registerUser.this, "Registration Failed, try again!", Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+
+                                } else {
+                                    Toast.makeText(registerUser.this, "try again", Toast.LENGTH_LONG).show();
+                                }
                             }
                         });
+
             }
         });
 

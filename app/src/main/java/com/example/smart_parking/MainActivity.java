@@ -18,15 +18,26 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class MainActivity extends AppCompatActivity {
     Button getDirectionsBtn;
     Button bookingButton;
 
+
     private ImageButton slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8, slot9;
     Dialog popDialog;
     private static final String CHANNEL_ID = "book_id";
+    DatabaseReference ref;
+    boolean slotStatus = false;
 
 
 
@@ -49,17 +60,45 @@ public class MainActivity extends AppCompatActivity {
         slot8 = findViewById(R.id.imageButton8);
         slot9 = findViewById(R.id.imageButton9);
 
-       popDialog = new Dialog(this); popDialog = new Dialog(this);
+
+        popDialog = new Dialog(this);
+        popDialog = new Dialog(this);
         getDirectionsBtn = findViewById(R.id.directButton);
+
+        //get the status of parking slot from firebase database
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                slotStatus= (boolean) dataSnapshot.child("status").getValue();
+                if(slotStatus==true){
+                    slot1.setImageResource(R.drawable.slot_occupied);
+                }else{
+                    slot1.setImageResource(R.drawable.slot_free);
+                }
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         slot1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                popDialog.setContentView(R.layout.popup);
-                popDialog.show();
-                popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+                if(slotStatus==false){
+                    popDialog.setContentView(R.layout.popup);
+                    popDialog.show();
+                    popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
+
+                }else{
+                    Toast.makeText(MainActivity.this, "Slot Booked", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
+
+
         slot2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                 popDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
             }
         });
+
         slot5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

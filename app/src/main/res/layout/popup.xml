@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/popupView"
-    android:layout_width="400dp"
+    android:layout_width="320dp"
     android:layout_height="560dp"
     android:layout_gravity="center">
 
@@ -18,7 +18,7 @@
         android:layout_marginEnd="107dp"
         android:background="@drawable/popup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.449"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -44,13 +44,13 @@
         android:layout_width="182dp"
         android:layout_height="70dp"
         android:layout_marginStart="116dp"
-        android:layout_marginTop="384dp"
+        android:layout_marginTop="404dp"
         android:layout_marginEnd="101dp"
         android:onClick="takeMeThere"
         android:text="@string/take_me_there"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.455"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,12 +59,12 @@
         android:layout_width="182dp"
         android:layout_height="70dp"
         android:layout_marginStart="116dp"
-        android:layout_marginTop="312dp"
+        android:layout_marginTop="316dp"
         android:layout_marginEnd="129dp"
-        android:onClick="bookSlot"
+        android:onClick="book"
         android:text="Book "
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.336"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

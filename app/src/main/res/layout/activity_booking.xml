@@ -13,12 +13,13 @@
         android:layout_height="wrap_content"
         android:text="STATUS: "
         android:textColor="@color/purple_700"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintHorizontal_bias="0.369"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.553" />
+        app:layout_constraintVertical_bias="0.568" />
 
     <TextView
         android:id="@+id/textView1"
@@ -28,7 +29,7 @@
         android:textColor="@color/purple_700"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,15 +50,17 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="FREE"
+        android:layout_height="20dp"
+        android:text="FREE  "
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="16dp"
 
-        app:layout_constraintBaseline_toBaselineOf="@+id/slotStatus"
-        app:layout_constraintLeft_toRightOf="@+id/slotStatus"
-        app:layout_constraintStart_toEndOf="@+id/slotStatus" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.566" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -70,4 +73,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/splash" />
+
+    <EditText
+        android:id="@+id/bookingHoursInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter hours to book...."
+        android:inputType="number"
+        android:outlineSpotShadowColor="@color/purple_700"
+        android:shadowColor="@color/purple_700"
+        android:textColorHint="#123456"
+        android:textSize="18sp"
+        android:textColor="@color/purple_700"
+        app:layout_constraintBottom_toTopOf="@+id/BookSlotBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView1"
+        app:layout_constraintVertical_bias="0.605" />
+
+    <TextView
+        android:id="@+id/countDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:textColor="@color/purple_700"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BookSlotBtn" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

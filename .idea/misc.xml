@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Jose/Documents/ELECTRONICS COURSES/design and project/3.2/smartparking-3.2/app/src/main/res/layout/activity_booking.xml" value="0.11458333333333333" />
         <entry key="..\:/Users/Jose/Documents/ELECTRONICS COURSES/design and project/3.2/smartparking-3.2/app/src/main/res/layout/activity_forgot_password.xml" value="0.2625" />
         <entry key="..\:/Users/Jose/Documents/ELECTRONICS COURSES/design and project/3.2/smartparking-3.2/app/src/main/res/layout/activity_main.xml" value="0.2625" />
         <entry key="..\:/Users/Jose/Documents/ELECTRONICS COURSES/design and project/3.2/smartparking-3.2/app/src/main/res/layout/activity_main_page.xml" value="0.2625" />
@@ -22,7 +21,7 @@
         <entry key="app/src/main/res/drawable/parking_logo_background.xml" value="0.203" />
         <entry key="app/src/main/res/drawable/splash_image.xml" value="0.203" />
         <entry key="app/src/main/res/drawable/splash_screen.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_booking.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_booking.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_get_directions.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main_page.xml" value="0.25" />

@@ -9,8 +9,12 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -92,7 +96,7 @@ public class  registerUser extends AppCompatActivity  {
 
             @Override
             public void onClick(View v) {
-                Task<com.google.firebase.auth.AuthResult> authResultTask = userAuth.createUserWithEmailAndPassword(email1, password)
+                Task<AuthResult> authResultTask = userAuth.createUserWithEmailAndPassword(email1, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {

@@ -25,7 +25,7 @@ public class GetDirections extends AppCompatActivity {
     Timer parkingTimer;
     int count = 0;
     boolean stopped = false;
-    TextView parkingSLotStatus;
+    static TextView parkingSLotStatus;
 
 
 

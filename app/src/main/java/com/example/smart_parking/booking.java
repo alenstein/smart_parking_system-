@@ -14,19 +14,30 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class booking extends AppCompatActivity {
     Button bookingButton;
     String CHANNEL_ID = "channel 2";
 
     EditText bookTheseHours;
-    TextView parkingSlotStatusUpdate;
-    String bookedHours, title, context;
+    TextView parkingSlotStatusUpdate, bookingCounter;
+    String  title, context;
+    int bookedHours, seconds;
+    private CountDownTimer bookingTimer;
+    private long timeLeftInMilliseconds = 60000;
+    boolean timerRunning;
+
+    static int count, time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +46,57 @@ public class booking extends AppCompatActivity {
         bookingButton = findViewById(R.id.BookSlotBtn);
 
         bookTheseHours = findViewById(R.id.bookingHoursInput);
+        bookingCounter = findViewById(R.id.countDown);
         parkingSlotStatusUpdate = findViewById(R.id.textView2);
 
     }
 
+    public void start(){
+        if (timerRunning){
+            stopTimer();
+        }else{
+            startTimer();
+        }
+    }
 
+
+
+    private void startTimer() {
+        bookingTimer = new CountDownTimer(timeLeftInMilliseconds, 1000) {
+            @Override
+            public void onTick(long l) {
+                timeLeftInMilliseconds = l;
+                updateTimer();
+            }
+
+            @Override
+            public void onFinish() {
+
+            }
+        }.start();
+        timerRunning = true;
+    }
+
+    public void updateTimer() {
+        int minutes = (int) timeLeftInMilliseconds/60000;
+        int seconds = (int) timeLeftInMilliseconds % 600000 / 1000;
+        String timeLeft;
+        timeLeft = "" + minutes;
+        timeLeft += ":";
+        if (seconds < 10){
+            timeLeft += "0";
+        }
+        timeLeft += seconds;
+        bookingCounter.setText(timeLeft);
+    }
+
+    private void stopTimer() {
+        bookingTimer.cancel();
+        timerRunning = false;
+    }
 
     public void bookSlot(View view){
-        bookedHours = bookTheseHours.getText().toString();
+        bookedHours = Integer.parseInt(bookTheseHours.getText().toString());
         Toast booking = Toast.makeText(booking.this, "preparing to book slot", Toast.LENGTH_SHORT);
         booking.show();
 
@@ -50,9 +104,12 @@ public class booking extends AppCompatActivity {
         context = "Booked parking slot1 for " + bookedHours + " hours";
         notifyPush(view, title, context);
 
-        parkingSlotStatusUpdate.setText("BOOKED");
+        parkingSlotStatusUpdate.setText("BOOKED for " + bookedHours + "h");
+        timeLeftInMilliseconds = (long) bookedHours;
+        //bookingCounter.setText(bookedHours);
+        start();
 
-        //startActivity(new Intent(MainActivity.this, SignUpLogin.class) );
+        //startActivity(new Intent(booking.this, SignUpLogin.class) );
     }
 
     public void notifyPush(View view, String nTitle, String nContext) {
@@ -69,4 +126,6 @@ public class booking extends AppCompatActivity {
             notificationManager.notify(2, builder.build());
         }
     }
+
+
 }

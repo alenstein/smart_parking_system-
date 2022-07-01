@@ -35,7 +35,7 @@ public class  registerUser extends AppCompatActivity  {
         setContentView(R.layout.activity_register_user);
 
       initialiseComponents();
-      registerUser();
+      createUserAccount();
 
     }
 
@@ -56,7 +56,7 @@ public class  registerUser extends AppCompatActivity  {
         signUp=findViewById(R.id.signUpButton);
     }
 
-    private void registerUser() {
+    private void createUserAccount() {
         String password = editTextPassword.getText().toString().trim();
         final String email1 = editTextEmail.getText().toString().trim();
 
